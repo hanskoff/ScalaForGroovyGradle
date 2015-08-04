@@ -2,19 +2,23 @@ package pl.jan
 
 /**
  * combining two options with for-comprehension
- **/
+ */
 
 object Sample03option {
 
-  def fuse[A, B](a: Option[A], b: Option[B]): Option[(A, B)] = {
+  /** Excercise: The resulting Option object should contain a tuple of values from Option objects
+    * optA and optB, given that both optA and optB are non-empty.
+    */
+
+  def fuse[A, B](optA: Option[A], optB: Option[B]): Option[(A, B)] = {
     for {
-      a1 <- a
-      b1 <- b
-    } yield (a1, b1)
+      a <- optA
+      b <- optB
+    } yield (a, b)
   }
 
-  def rawFuse[A, B](a: Option[A], b: Option[B]) = {
-    a.flatMap(a1 => b.map(b1 => (a1, b1)))
+  def fuseWithoutSugar[A, B](optA: Option[A], optB: Option[B]) = {
+    optA.flatMap(a => optB.map(b => (a, b)))
   }
 }
 

@@ -32,3 +32,5 @@ object Sample04visitor {
     case Man() => "on 4"
   }
 }
+
+//source: https://dimitrisli.wordpress.com/2014/01/23/visitor-design-pattern-in-scala/

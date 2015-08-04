@@ -18,3 +18,5 @@ object Sample02hofAndStategy {
   def compose[A, B, C](g: B => C, f: A => B): A => C = x => g(f(x))
 
 }
+
+//source: http://slides.com/kyeljohndavid/scala-in-a-nutshell#/14

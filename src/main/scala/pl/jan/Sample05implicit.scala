@@ -20,4 +20,4 @@ object Sample05implicit extends App {
 
 }
 
-//resource:https://youtu.be/sVMES4RZF-8?t=833
+//source:https://youtu.be/sVMES4RZF-8?t=833
