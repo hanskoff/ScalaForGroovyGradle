@@ -1,4 +1,10 @@
 
+## Agenda
+
+1. This
+2. micro-infra-scala
+
+
 ## Scala
 Imperative vs functional:
 https://twitter.com/mariofusco/status/571999216039542784?s=09

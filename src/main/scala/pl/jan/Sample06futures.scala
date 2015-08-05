@@ -6,7 +6,8 @@ import scala.concurrent.{Await, Future}
 import scala.util.{Failure, Success}
 
 /**
- * Having a list of futures I want to return with smth whenever they fail or not?
+ * Having a list of futures I want to return with any that completed ?
+ * not to fail whole computation
  **/
 object Sample06futures extends App {
 
@@ -24,6 +25,5 @@ object Sample06futures extends App {
   }
 
   Await.result(futureOfList, 1000 millis)
-
 
 }
