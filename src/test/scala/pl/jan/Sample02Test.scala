@@ -5,21 +5,17 @@ import pl.jan.Sample02hofAndStategy._
 
 class Sample02Test extends FunSuite {
 
+  val hello = "hello"
+
   test("should reverse string") {
-    val x = "hello"
-    //then
-    assert("olleh"== stringOps(x, reverse))
+    assert("olleh" == applyFun(hello, reverse))
   }
 
   test("should upper string") {
-    val x = "hello"
-    //then
-    assert("HELLO"== stringOps(x, upper))
+    assert("HELLO" == applyFun(hello, upper))
   }
 
   test("should compose two functions") {
-    val x = "hello"
-    //then
-    assert("OLLEH" == stringOps(x, compose(upper, reverse)))
+    assert("OLLEH" == applyFun(hello, compose(upper, reverse)))
   }
 }

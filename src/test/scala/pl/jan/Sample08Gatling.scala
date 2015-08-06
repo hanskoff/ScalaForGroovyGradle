@@ -29,11 +29,9 @@ class Sample08Gatling extends Simulation {
     .pause(2 seconds)
     .exec(register)
 
-  setUp(
+  setUp( //http://gatling.io/docs/2.0.0-RC2/general/simulation_setup.html
     scn.inject(
-      atOnceUsers(50) //JdbcSQLException: Timeout trying to lock table "users"
-//      rampUsers(10) over(5 seconds),
-//      constantUsersPerSec(20) during(15 seconds)
+      atOnceUsers(50)
     )
   ).assertions(global.failedRequests.count.is(0), global.responseTime.max.lessThan(1200))
     .protocols(httpProtocol)

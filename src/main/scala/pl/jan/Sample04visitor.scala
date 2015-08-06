@@ -3,8 +3,9 @@ package pl.jan
 /**
 
 Visitor lets you define a new operation without changing the classes of the elements on which it operates.
-
+problem: http://butunclebob.com/ArticleS.UncleBob.IuseVisitor
   */
+
 abstract class Animal {def walk: String}
 
 case class Dog() extends Animal {override def walk = "on 4"}

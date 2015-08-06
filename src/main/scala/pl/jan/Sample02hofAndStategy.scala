@@ -3,10 +3,11 @@ package pl.jan
 /**
  * higher-order functions = defining a method that accepts simple function parameter
  **/
+
 object Sample02hofAndStategy {
   //
-  def stringOps(s: String, f: String => String) = {
-    if (s == null) "" else f(s)
+  def applyFun[A](payload: A, f: A => A):A = {
+    f(payload)
   }
 
   //OOP strategy pattern

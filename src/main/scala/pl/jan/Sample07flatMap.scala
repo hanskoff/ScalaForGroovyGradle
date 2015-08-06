@@ -1,17 +1,16 @@
 package pl.jan
 
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import scala.util.{Failure, Success}
-import scala.concurrent.ExecutionContext.Implicits.global
 
 class Sample07flatMap {
 
   def sendPacketToEuropeAndBackII(): Unit = {
     val socket = Socket()
+    val packet: Future[Array[Byte]] = socket.readFromMemory()
 
-    val packet: Future[Array[Byte]] =
-      socket.readFromMemory()
-
+    // handling future result
     packet onComplete {
       case Success(p) => {
         val confirmation: Future[Array[Byte]] = socket.sendToEurope(p)
@@ -47,11 +46,3 @@ trait Socket {
     }
   }
 }
-
-object EmailMessage {
-  def apply(from: String, to: String): EmailMessage = {
-    new EmailMessage(from, to)
-  }
-}
-
-class EmailMessage(val from: String, val to: String) {}

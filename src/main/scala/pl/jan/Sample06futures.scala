@@ -16,7 +16,7 @@ object Sample06futures extends App {
     Future.failed(new Exception("Failure")),
     Future.successful(3))
 
-  // List[Future] to Future[List]
+  // Future.sequence - List[Future] to Future[List]
   val futureOfList = Future.sequence(listOfFutures)
 
   futureOfList onComplete {
