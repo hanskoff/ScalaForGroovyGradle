@@ -13,6 +13,6 @@ class Sample04Test extends FunSuite {
     swim(dog)
     //then
     assert("wav wav" == talk(dog))
-    assert("hi" == talk(dog))
+    assert("hi" == talk(man))
   }
 }

@@ -25,6 +25,10 @@ object Sample06solution extends App {
   }
 
   Await.result(futureListOfTrys, 1000 millis)
+
+  val futureListOfSuccesses = futureListOfTrys.map(_.filter(_.isSuccess))
+
+  val futureListOfFailures = futureListOfTrys.map(_.filter(_.isFailure))
 }
 
 //source:http://stackoverflow.com/questions/20874186/scala-listfuture-to-futurelist-disregarding-failed-futures
